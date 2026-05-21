@@ -15,7 +15,15 @@ public class Televisao {
 
         this.marca = marca;
         this.tamanhoDaTela = tamanhoDaTela;
-        this.voltagem = voltagem;
+
+        //Protegendo a voltagem
+        if(voltagem == 110 || voltagem == 220) {
+            this.voltagem = voltagem;
+        } else {
+            System.out.println("Voltagem inválida");
+            System.out.println("Definindo como padrão: 220");
+            this.voltagem = 220;
+        }
     }
 
     public void ligar() {
